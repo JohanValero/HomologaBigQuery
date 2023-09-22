@@ -1,0 +1,4 @@
+env/
+.key/
+.vscode/
+requirements-dev.txt
