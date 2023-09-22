@@ -1,6 +1,7 @@
 from flask import Flask, request
 from google.cloud import bigquery
 import json
+import os
 
 # Construct a BigQuery client object.
 
@@ -102,4 +103,5 @@ def homologa():
     )
     return "OK"
 
-app.run(host = '0.0.0.0', debug = True)
+gPORT = os.getenv('PORT', default=None)
+app.run(host = '0.0.0.0', port = gPORT, debug = True)
